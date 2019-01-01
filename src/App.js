@@ -1,14 +1,16 @@
 import React, { Component } from "react";
-import { observable } from "mobx";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import BaseRouter from "./routes";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "@pages/home";
+import About from "@pages/about";
 
 class App extends Component {
-  @observable price = 0;
   render() {
     return (
       <Router>
-        <Route path="/" component={BaseRouter} />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+        </Switch>
       </Router>
     );
   }

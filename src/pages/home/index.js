@@ -11,6 +11,7 @@ class Home extends Component {
       <div>
         <Button onClick={this.props.presenter.getPrice}>Price Change</Button>
         <p>{this.props.presenter.price}</p>
+        <p>{JSON.stringify(this.props.presenter.dashboard)}</p>
       </div>
     );
   }
